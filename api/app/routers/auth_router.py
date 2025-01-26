@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
+from schemas.user_schema import UserCreate
 from routers.dependencies import oauth2_schema
 from services.auth_service import AuthService
 
@@ -16,6 +17,11 @@ auth_service = AuthService()
 def signin(user: OAuth2PasswordRequestForm = Depends()):
     access_token = auth_service.authenticate(user)
     return access_token
+
+
+@auth_router.post('/signup')
+def signup(user: UserCreate):
+    return auth_service.create_user(user)
 
 
 @auth_router.get('/profile')

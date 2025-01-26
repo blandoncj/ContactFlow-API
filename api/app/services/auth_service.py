@@ -7,7 +7,7 @@ from fastapi.exceptions import HTTPException
 from models.user_model import UserModel
 from services.user_service import UserService
 from helpers.password_helper import check_password
-from schemas.user_schema import UserAuth, UserResponse
+from schemas.user_schema import UserAuth, UserCreate, UserResponse
 
 load_dotenv()
 
@@ -48,3 +48,6 @@ class AuthService:
         token = self.encode_token(token_data)
 
         return {'access_token': token, 'user': token_data}
+
+    def create_user(self, user: UserCreate) -> UserResponse:
+        return self.user_service.create(user)
