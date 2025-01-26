@@ -19,7 +19,7 @@ class UserService:
         return self.user_repository.get_by_id(user_id)
 
     def get_by_username(self, username: str) -> UserResponseWithPassword | None:
-        return self.get_by_username(username)
+        return self.user_repository.get_by_username(username)
 
     def validate_username(self, username: str) -> None:
         if self.get_by_username(username):
@@ -42,5 +42,5 @@ class UserService:
 
         return self.user_repository.update(user_id, user)
 
-    def delete(self, user_id: int) -> None:
+    def delete(self, user_id: int) -> Noneuser_.get:
         self.user_repository.delete(user_id)
