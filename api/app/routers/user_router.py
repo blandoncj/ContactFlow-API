@@ -9,7 +9,7 @@ from schemas.user_schema import UserCreate, UserUpdate, UserResponse
 
 user_router = APIRouter(
     prefix='/users',
-    tags=['Users'],
+    tag_=['Users'],
     dependencies=[Depends(get_api_key), Depends(oauth2_schema)]
 )
 
@@ -21,14 +21,14 @@ def get_users():
     return user_service.get_all()
 
 
+@user_router.post('/', response_model=UserResponse)
+def create_user(user: UserCreate):
+    return user_service.create(user)
+
+
 @user_router.get('{user_id}', response_model=UserResponse)
 def get_user(user_id: int):
     return user_service.get_by_id(user_id)
-
-
-@user_router.post('/signup', response_model=UserResponse)
-def create_user(user: UserCreate):
-    return user_service.create(user)
 
 
 @user_router.patch('{user_id}', response_model=UserResponse)
