@@ -9,7 +9,7 @@ from schemas.user_schema import UserCreate, UserUpdate, UserResponse
 
 user_router = APIRouter(
     prefix='/users',
-    tag_=['Users'],
+    tags=['Users'],
     dependencies=[Depends(get_api_key), Depends(oauth2_schema)]
 )
 
