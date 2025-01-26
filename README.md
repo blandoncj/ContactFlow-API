@@ -85,7 +85,7 @@ CREATE TABLE users (
 
 CREATE TABLE contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(50) NOT NULL,
+    firstname VARCHAR(50) NOT NULL,
     lastname VARCHAR(50),
     email VARCHAR(50),
     is_favorite BOOLEAN DEFAULT FALSE,
