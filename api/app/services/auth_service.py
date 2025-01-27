@@ -47,7 +47,7 @@ class AuthService:
 
         token = self.encode_token(token_data)
 
-        return {'access_token': token, 'user': token_data}
+        return {'access_token': token}
 
     def create_user(self, user: UserCreate) -> UserResponse:
         return self.user_service.create(user)
