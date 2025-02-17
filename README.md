@@ -24,7 +24,7 @@ on their contact list.
 ## Features
 
 - **User Authentication**: Users can register, login and obtain a JWT token to
-authenticate themselves.
+  authenticate themselves.
 - **CRUD Operations**: Users can create, read, update and delete contacts.
 - **Security**: The API uses JWT for authentication and OAuth2 for authorization.
 - **Dockerized**: The API is containerized using Docker.
@@ -40,7 +40,7 @@ authenticate themselves.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/blandoncj/ContactFlow-API.git 
+git clone https://github.com/blandoncj/ContactFlow-API.git
 ```
 
 2. Change directory:
@@ -63,17 +63,18 @@ MYSQL_DATABASE=your_mysql_database
 ```
 
 4. Build and run the Docker containers:
-  
+
 ```bash
 docker-compose build
 docker-compose up -d
 ```
 
 > [!NOTE]
-> The API will be available at <http://localhost:8000/docs> and the database will be available at <http://localhost:8080> (adminer).
+> The API will be available at <http://localhost:8000/docs> and the database will
+> be available at <http://localhost:8080> (adminer).
 
 5. Create the database tables:
-  
+
 ```sql
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -103,11 +104,12 @@ CREATE TABLE phones (
 
 ## License
 
-> This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+> This project is licensed under the MIT License - see
+> the [LICENSE](LICENSE) file for details.
 
 ## Author
 
-Made with ❤️  by [blandoncj](https://github.com/blandoncj)
+Made with ❤️ by [blandoncj](https://github.com/blandoncj)
 
 ## Contributing
 
